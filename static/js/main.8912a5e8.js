@@ -1,4 +1,4 @@
-/*! For license information please see main.a116fe86.js.LICENSE.txt */
+/*! For license information please see main.8912a5e8.js.LICENSE.txt */
 (()=>{var e={613:(e,t,n)=>{"use strict";n.d(t,{a:()=>h});n(711);var r=n(579),a=(n(43),n(464));const o="#4fa94d",i={"aria-busy":!0,role:"progressbar"},l=a.Ay.div`
   display: ${e=>e.$visible?"flex":"none"};
 `,s="http://www.w3.org/2000/svg",u=242.776657104492,c=a.i7`
@@ -265,5 +265,5 @@ input[type="text"] {
     margin: 10px;
   }
 }
-`;t.createRoot(document.getElementById("root")).render((0,l.jsx)(e.StrictMode,{children:(0,l.jsxs)(o.Kd,{children:[(0,l.jsx)(S,{}),(0,l.jsx)(w,{})]})}))})()})();
-//# sourceMappingURL=main.a116fe86.js.map
+`;t.createRoot(document.getElementById("root")).render((0,l.jsx)(e.StrictMode,{children:(0,l.jsxs)(o.Kd,{basename:"movies-search",children:[(0,l.jsx)(S,{}),(0,l.jsx)(w,{})]})}))})()})();
+//# sourceMappingURL=main.8912a5e8.js.map
