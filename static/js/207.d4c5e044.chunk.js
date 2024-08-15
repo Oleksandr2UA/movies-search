@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmovies_search=self.webpackChunkmovies_search||[]).push([[207],{207:(e,s,o)=>{o.r(s),o.d(s,{default:()=>r});var a=o(475),h=o(579);const r=()=>(0,h.jsxs)(h.Fragment,{children:[(0,h.jsx)("h2",{children:"Ooops, we haven't found the page you were looking for"}),(0,h.jsx)(a.k2,{to:"/",children:"Go back to Home page"})]})}}]);
+//# sourceMappingURL=207.d4c5e044.chunk.js.map
