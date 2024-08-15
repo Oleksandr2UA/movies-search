@@ -1,0 +1,101 @@
+.movie-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+/* Bigger then 768px */
+@media (min-width: 768px) {
+  .movie-details {
+    align-items: center;
+  }
+}
+/* Smaller then 768px */
+@media (max-width: 768px) {
+  .movie-details {
+    justify-content: center;
+  }
+}
+.movie-subtitle {
+  margin-top: 5px;
+}
+
+/* Smaller then 374px */
+@media (max-width: 374px) {
+  .movie-subtitle {
+    margin-top: 10px;
+  }
+}
+/* Smaller then 450 */
+@media (max-width: 450px) {
+  .movie-info .movie-stars {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 25px;
+  }
+  .movie-info h1 {
+    margin-bottom: 10px;
+  }
+}
+
+.movie-details img {
+  max-width: 100%;
+  min-height: 500px;
+  min-width: 320px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+/* Smaller then 321 */
+@media (max-width: 321px) {
+  .movie-details img {
+    min-width: 300px;
+  }
+}
+@media (max-width: 450px) {
+  .movie-info h1 {
+    margin-top: 0;
+  }
+}
+.movie-info {
+  max-width: 600px;
+  flex: 1;
+}
+
+.movie-info h2 {
+  font-size: 2.5rem;
+}
+
+.movie-info .movie-stars {
+  margin-bottom: 0;
+  font-size: 25px;
+}
+.movie-info p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.movie-info h4 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+.movie-info .movie-genres {
+  margin-bottom: 10px;
+}
+
+.movie-info span {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+}
+
+.movie-info a {
+  color: #3f51b5;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.movie-info a:hover {
+  color: #ff5722;
+}

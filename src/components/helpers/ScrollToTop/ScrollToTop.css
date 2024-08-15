@@ -1,0 +1,85 @@
+.scroll-to-top,
+.scroll-to-half,
+.scroll-to-bottom {
+  position: fixed;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll-to-bottom-btn,
+.scroll-to-half-btn,
+.scroll-to-top-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  opacity: 0.8;
+  margin-bottom: 10px;
+  transition: opacity 0.3s;
+}
+
+.scroll-to-bottom-btn:hover,
+.scroll-to-half-btn:hover,
+.scroll-to-top-btn:hover {
+  opacity: 1;
+}
+
+.scroll-to-bottom {
+  bottom: 80px;
+}
+
+.scroll-to-half {
+  bottom: 140px;
+}
+
+.scroll-to-top {
+  bottom: 200px;
+}
+
+@media (max-width: 768px) {
+  .scroll-to-bottom-btn,
+  .scroll-to-half-btn,
+  .scroll-to-top-btn {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  .scroll-to-bottom {
+    bottom: 60px;
+  }
+
+  .scroll-to-half {
+    bottom: 110px;
+  }
+
+  .scroll-to-top {
+    bottom: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-bottom-btn,
+  .scroll-to-half-btn,
+  .scroll-to-top-btn {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .scroll-to-bottom {
+    bottom: 50px;
+  }
+
+  .scroll-to-half {
+    bottom: 90px;
+  }
+
+  .scroll-to-top {
+    bottom: 130px;
+  }
+}
