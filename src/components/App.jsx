@@ -8,6 +8,7 @@ import { Layout } from "./Layout/Layout";
 // import { WrongPage } from '../page/WrongPage/WrongPage';
 import { lazy } from "react";
 import { ActorDetails } from "../page/ActorDetails/ActorDetails";
+import { SimilarMovies } from "./SimilarMovies/SimilarMovies";
 // import Genre from 'page/Genre/Genre';
 
 const Home = lazy(() => import("../page/Home/Home"));
@@ -31,6 +32,7 @@ export const App = () => {
             {/*Обнорнув вкладені маршрути, тому ставлю outlet, місце куди рендерити компоненти } */}
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
+            <Route path="similar" element={<SimilarMovies />} />
           </Route>
           <Route path="/movies/:movieId/:genreId" element={<Genre />} />
           <Route path="/genres/:genreId" element={<Genre />} />
