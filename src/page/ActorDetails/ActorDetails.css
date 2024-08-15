@@ -37,6 +37,9 @@
 .actor-info {
   max-width: 600px;
   flex-grow: 1;
+
+  color: #000;
+  /* To avoid getting tomato color as a hover */
 }
 
 /* Title Styling */
@@ -102,7 +105,7 @@
 
   .actor-poster {
     margin-right: 0;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     width: 50%; /* Or 50% from container space, not sure what is better */
     height: auto;
   }

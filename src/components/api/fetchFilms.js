@@ -1,22 +1,22 @@
-import axios from 'axios';
-const KEY = '3d1b22cd317768d7fb4a69e9683da357';
-const BASE_URL = 'https://api.themoviedb.org/3';
+import axios from "axios";
+const KEY = "3d1b22cd317768d7fb4a69e9683da357";
+const BASE_URL = "https://api.themoviedb.org/3";
 
 axios.defaults.baseURL = BASE_URL;
 const params = {
   params: {
     api_key: KEY,
-    language: 'en-US',
+    language: "en-US",
   },
 };
-export const fetchPopularFilms = async abortController => {
+export const fetchPopularFilms = async (abortController) => {
   const resp = await axios.get(`/trending/all/day`, {
     ...params,
     signal: abortController.signal,
   });
   return resp.data.results;
 };
-export const fetchFilmsByName = async title => {
+export const fetchFilmsByName = async (title) => {
   const response = await axios.get(`/search/movie?query=${title}`, params);
   return response.data.results;
 };
@@ -24,7 +24,7 @@ export const fetchFilmDetails = async (id, abortController) => {
   const videosResp = await axios.get(`/movie/${id}/videos`, params);
 
   const trailers = await videosResp.data.results.filter(
-    video => video.type === 'Trailer' && video.site === 'YouTube'
+    (video) => video.type === "Trailer" && video.site === "YouTube"
   );
   const video = `https://www.youtube.com/embed/${trailers[0].key}`;
   // console.log('video ', video);
@@ -104,4 +104,19 @@ export const fetchFilmsByGenre = async (id, abortController, page) => {
     ...resp3.data.results,
   ];
   return films;
+};
+export const fetchSimilarMovies = async (movieId, abortController) => {
+  const requests = [1, 2, 3, 4, 5].map((page) =>
+    axios.get(
+      `https://api.themoviedb.org/3/movie/${movieId}/similar?page=${page}`,
+      {
+        ...params,
+        signal: abortController.signal,
+      }
+    )
+  );
+  const responses = await Promise.all(requests);
+  const allMovies = responses.flatMap((resp) => resp.data.results);
+  console.log("all movies: ", allMovies);
+  return allMovies;
 };

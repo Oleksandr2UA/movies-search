@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useRef } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
-import { MoviePreview } from "../../components/helpers/MoviePreview/MoviePreview";
+import { MoviePreview } from "../../components/MoviePreview/MoviePreview";
 import { Loader } from "../../components/Loader/Loader";
 import { getGenres } from "../../components/helpers/GenresData/getGenres";
 import "../Genre/Genre.css";
@@ -97,11 +97,19 @@ const Genre = () => {
         3
       );
       setFilms((prevFilms) => [...prevFilms, ...filmsForPage3]);
+    } else if (page === 4) {
+      const filmsForPage4 = await fetchMovieForPages(
+        genreId,
+        abortController,
+        page,
+        4
+      );
+      setFilms((prevFilms) => [...prevFilms, ...filmsForPage4]);
     }
 
     setPage((prevPage) => prevPage + 1);
 
-    page !== 3 ? setIsLoadMore(true) : setIsLoadMore(false); // After second request we habe prohibid load more films (they arent famous enough)
+    page !== 4 ? setIsLoadMore(true) : setIsLoadMore(false); // If it is page 4 prohibid to loadmore (there arent any)
     setIsLoadMoreData(false);
   }
 

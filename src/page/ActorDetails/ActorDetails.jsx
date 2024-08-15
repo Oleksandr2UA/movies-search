@@ -1,5 +1,5 @@
 import { fetchActorDetails } from "../../components/api/fetchFilms";
-import { MoviePreview } from "../../components/helpers/MoviePreview/MoviePreview";
+import { MoviePreview } from "../../components/MoviePreview/MoviePreview";
 import {
   ScrollToBottom,
   ScrollToHalf,

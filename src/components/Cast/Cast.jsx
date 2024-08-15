@@ -17,7 +17,7 @@ export const Cast = () => {
   const location = useLocation();
   console.log("cast: ", location);
   useEffect(() => {
-    console.log("useeffect");
+    // console.log("useeffect");
     const abortController = new AbortController();
 
     async function getCredits() {

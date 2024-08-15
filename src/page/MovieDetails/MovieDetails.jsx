@@ -120,6 +120,11 @@ const MovieDetails = () => {
               Reviews
             </Link>
           </p>
+          <p>
+            <Link to="similar" className="sidebar-link">
+              Show similar movies
+            </Link>
+          </p>
           <Suspense>
             <Outlet />
           </Suspense>

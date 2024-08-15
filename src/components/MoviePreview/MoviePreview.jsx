@@ -1,8 +1,8 @@
-import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa';
-import { Link, useLocation } from 'react-router-dom';
-import { getGenres } from '../GenresData/getGenres';
-import { sortFilms } from '../SortFilms';
-import '../MoviePreview/MoviePreview.css';
+import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
+import { getGenres } from "../helpers/GenresData/getGenres";
+import { sortFilms } from "../helpers/SortFilms";
+import "./MoviePreview.css";
 
 export const MoviePreview = ({ films, character, movieId }) => {
   const sortedFilms = sortFilms(films);
@@ -35,8 +35,8 @@ export const MoviePreview = ({ films, character, movieId }) => {
                 state={{ from: location }}
                 className={
                   movieId && id === Number(movieId)
-                    ? 'actor-details-link active-link'
-                    : 'actor-details-link'
+                    ? "actor-details-link active-link"
+                    : "actor-details-link"
                 }
                 key={id}
               >
@@ -71,7 +71,7 @@ export const MoviePreview = ({ films, character, movieId }) => {
                     ) : (
                       <FaRegStar key={id} className="empty-star" />
                     )}
-                    {rating + '/10'}
+                    {rating + "/10"}
                   </p>
 
                   <p className="release-date">{release_date}</p>
