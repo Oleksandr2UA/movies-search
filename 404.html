@@ -4,23 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page Not Found</title>
-    <script type="text/javascript">
-      // Redirect all requests to index.html
-      var pathname = window.location.pathname;
-      console.log("pathname: ", pathname);
-      if (!pathname.startsWith("/movies-search")) {
-        pathname = "/movies-search" + pathname;
-      }
-      console.log("wind location: ", window.location);
-      window.location.replace(
-        "/movies-search" +
-          pathname +
-          window.location.search +
-          window.location.hash
-      );
-    </script>
   </head>
   <body>
+    <script type="text/javascript">
+      // Redirect to the appropriate route within the app
+      var redirectTo =
+        window.location.protocol +
+        "//" +
+        window.location.host +
+        "/movies-search" +
+        window.location.pathname +
+        window.location.search +
+        window.location.hash;
+      if (window.location.pathname === "/movies-search/") {
+        // Avoid looping for the root path
+        window.location.replace("/movies-search");
+      } else {
+        window.location.replace(redirectTo);
+      }
+    </script>
     <p>Page not found. Redirecting...</p>
   </body>
 </html>
