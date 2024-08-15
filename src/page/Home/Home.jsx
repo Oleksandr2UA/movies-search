@@ -34,7 +34,7 @@ const Home = () => {
     };
   }, []);
   return (
-    <div className="home__wrapper" style={{ backgroundColor: "grey" }}>
+    <div className="home__wrapper" style={{ backgroundColor: "red" }}>
       <h1>HOME</h1>
       <h2 className="home__title">Latest films: </h2>
       {isLoading && <Loader className="loader" />}
