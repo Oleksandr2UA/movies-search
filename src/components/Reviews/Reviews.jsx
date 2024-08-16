@@ -20,7 +20,6 @@ export const Reviews = () => {
         setError(null);
         setReviews(reviews);
       } catch (error) {
-        console.log(error);
         if (error.message === "canceled") return;
         alert("error");
         setError(`Something went wrong, if reloading page doesn't help, this films
@@ -34,7 +33,6 @@ export const Reviews = () => {
       abortController.abort();
     };
   }, [movieId]);
-  console.log("length: ", reviews.length);
   return (
     <>
       <h3>Reviews</h3>

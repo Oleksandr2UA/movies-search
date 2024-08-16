@@ -94,7 +94,6 @@ const MovieDetails = () => {
             <h4 className="movie-genres">Genres:</h4>
             {info.genres.map(({ id, name }) => {
               const path = `/movies/${movieId}/${id}`;
-              console.log("location: ", location);
               return (
                 <Link to={path} key={id} state={{ from: location }}>
                   <span>{name} </span>

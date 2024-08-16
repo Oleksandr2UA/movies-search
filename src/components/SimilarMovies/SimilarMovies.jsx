@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { fetchMovieForPages } from "../helpers/GenresData/fetchMovieForPages";
 import {
   ScrollToBottom,
@@ -20,9 +20,6 @@ export const SimilarMovies = () => {
   const [page, setPage] = useState(1);
   const [isLoadMore, setIsLoadMore] = useState(false);
   const [isLoadMoreData, setIsLoadMoreData] = useState(false);
-
-  const location = useLocation();
-  console.log("location similar: ", location);
 
   useEffect(() => {
     const abortController = new AbortController();

@@ -10,12 +10,12 @@ export const fetchMovieForPages = async (
   const movies = [];
   if (genreId !== null) {
     movies.push(...(await fetchFilmsByGenre(genreId, abortController, page)));
-    console.log("genreId is ", genreId);
+    // console.log("genreId is ", genreId);
   } else if (genreId === null) {
-    console.log("movie id is ", movieId);
+    // console.log("movie id is ", movieId);
     movies.push(...(await fetchSimilarMovies(movieId, abortController)));
   }
-  console.log("movies length: ", movies);
+  // console.log("movies length: ", movies);
 
   if (per_page === 1) {
     const moviesForPage1 = movies.filter(

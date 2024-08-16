@@ -117,6 +117,5 @@ export const fetchSimilarMovies = async (movieId, abortController) => {
   );
   const responses = await Promise.all(requests);
   const allMovies = responses.flatMap((resp) => resp.data.results);
-  console.log("all movies: ", allMovies);
   return allMovies;
 };

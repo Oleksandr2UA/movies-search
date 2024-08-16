@@ -6,7 +6,7 @@ import "./MoviePreview.css";
 
 export const MoviePreview = ({ films, character, movieId }) => {
   const sortedFilms = sortFilms(films);
-  console.log(sortedFilms);
+  // console.log(sortedFilms);
 
   const location = useLocation();
 
