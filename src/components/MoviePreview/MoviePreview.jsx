@@ -7,7 +7,7 @@ import "./MoviePreview.css";
 export const MoviePreview = ({ films, character, movieId }) => {
   const sortedFilms = sortFilms(films);
   // console.log(sortedFilms);
-
+  console.log("films: in preview ", films);
   const location = useLocation();
 
   return (
@@ -24,11 +24,17 @@ export const MoviePreview = ({ films, character, movieId }) => {
             id,
             character: characterFilm, // So it wouldnt be the same as prop character to check if i render data from actorDetails of GenreDetails
             genre_ids,
+            genres,
           }) => {
             const path = `/movies/${id}`;
             const rating = vote_average.toFixed(1);
+            console.log("genre_ids", genre_ids);
+            console.log("genres", genres);
             // Get a string of genres
-            const genresArr = getGenres(genre_ids);
+            //? Check for selected films, as it has now genres=[{id,name}] not genres_ids=[1,2]
+            const genresArr = genre_ids
+              ? getGenres(genre_ids)
+              : getGenres(genres.map((genre) => genre.id));
             return (
               <Link
                 to={path}

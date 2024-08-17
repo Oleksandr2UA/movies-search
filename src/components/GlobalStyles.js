@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 // Стилі зливаються в один файл, але виходить стилі h1 з home вплинуть на всі h1
@@ -110,6 +110,8 @@ nav ul li a {
   }
 }
 main {
+  // To center add movie button
+  position: relative;
   flex: 1; /* Allow the main content to grow and fill space */
   margin: 20px auto;
   max-width: 1200px;

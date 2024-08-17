@@ -1,18 +1,25 @@
 import { useRef, useEffect, useState, Suspense } from "react";
 import { Link, Outlet, useLocation, useParams } from "react-router-dom";
-import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import {
+  FaHeart,
+  FaRegHeart,
+  FaRegStar,
+  FaStar,
+  FaStarHalfAlt,
+} from "react-icons/fa";
 import { fetchFilmDetails } from "../../components/api/fetchFilms";
 import { Loader } from "../../components/Loader/Loader";
 import { Modal } from "../../components/Modal/Modal";
 import "../MovieDetails/MovieDetails.css";
 import "../Home/Home.css";
 
-const MovieDetails = () => {
+const MovieDetails = ({ onSetSelected, onDeleteId, selectedFilms }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [info, setInfo] = useState({});
   const [trailer, setTrailer] = useState(null);
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const { movieId } = useParams();
   //* Location
@@ -29,8 +36,17 @@ const MovieDetails = () => {
     setIsOpenModal(true);
   }
 
+  function checkIfIsFavorite(selectedFilms, idMovie) {
+    console.log("sel: ", selectedFilms);
+    const resp = selectedFilms.find(({ id }) => id === Number(idMovie));
+    console.log("resp: ", resp);
+    if (resp) {
+      setIsFavorite(true);
+    }
+  }
   useEffect(() => {
     const abortController = new AbortController();
+    checkIfIsFavorite(selectedFilms, movieId);
 
     async function getDetails() {
       try {
@@ -57,11 +73,33 @@ const MovieDetails = () => {
     };
   }, [movieId]);
 
+  const toggleFavorite = () => {
+    setIsFavorite((prevFav) => !prevFav);
+    console.log("isfav: ", isFavorite);
+    // Виклик setIsFavorite - асинх, отже в console.log буде дата перед зміною стейту
+    // Якщо змінюю на isFav true -> в console.log маю false
+    // Якщо змінюю на isFav false -> в console.log маю true
+    if (isFavorite === true) {
+      onDeleteId(movieId);
+      return;
+    }
+    onSetSelected(movieId);
+  };
+
   return (
     <>
       <Link to={backLinkLocationRef.current} className="go-back-link">
         Go back
       </Link>
+      {Object.keys(info).length !== 0 && (
+        <button className="favorite-icon" onClick={toggleFavorite}>
+          {isFavorite ? (
+            <FaHeart className="heart-icon active" />
+          ) : (
+            <FaRegHeart className="heart-icon" />
+          )}
+        </button>
+      )}
       {error && Object.keys(info).length === 0 && (
         <>
           <h2 className="error">{error}</h2>

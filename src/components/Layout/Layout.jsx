@@ -5,7 +5,7 @@ export const Layout = () => {
   return (
     <>
       <nav>
-        <ul>
+        <ul style={{ marginLeft: "auto" }}>
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
@@ -14,6 +14,9 @@ export const Layout = () => {
           </li>
           <li>
             <NavLink to="/genres">Genres</NavLink>
+          </li>
+          <li>
+            <NavLink to="/selected">Selected</NavLink>
           </li>
         </ul>
       </nav>

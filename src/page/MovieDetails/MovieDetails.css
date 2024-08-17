@@ -99,3 +99,56 @@
 .movie-info a:hover {
   color: #ff5722;
 }
+
+/* FAvorite */
+.favorite-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 2rem;
+  z-index: 10;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+.favorite-icon:hover {
+  background-color: transparent;
+}
+
+.favorite-icon:focus {
+  outline: none;
+}
+
+.heart-icon {
+  color: grey;
+  transition: color 0.3s;
+}
+
+.heart-icon.active {
+  color: red;
+}
+
+/* Movie Details Styling */
+.movie-details {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .movie-details {
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-details {
+    justify-content: center;
+  }
+}
+
+/* Other existing styles */
