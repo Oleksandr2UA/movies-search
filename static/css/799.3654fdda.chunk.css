@@ -1,2 +1,0 @@
-ul li:nth-child(odd){animation-delay:.1s}ul li:nth-child(2n){animation-delay:.2s}.home__wrapper{margin:0 auto;max-width:500px;padding:0 15px;width:100%}.home__title{font-size:1.5rem;margin-bottom:10px;text-align:center}@media (max-width:768px){.home__wrapper{width:90%}h1{font-size:2rem}.home__title{font-size:1.25rem}}@media (max-width:480px){h1{font-size:1.75rem}.home__title,ul li{font-size:1rem}}
-/*# sourceMappingURL=799.3654fdda.chunk.css.map*/
