@@ -1,4 +1,5 @@
 import { MoviePreview } from "../../components/MoviePreview/MoviePreview";
+import "../SelectedFilms/SelectedFilms.css";
 
 export const SelectedFilms = ({ selectedFilms, id }) => {
   console.log(
@@ -8,11 +9,18 @@ export const SelectedFilms = ({ selectedFilms, id }) => {
 
   return (
     <>
-      <h2>Selected Films</h2>
+      <h1>Selected Films</h1>
       {selectedFilms.length > 0 ? (
-        <MoviePreview films={selectedFilms} movieId={id} />
+        <MoviePreview
+          films={selectedFilms}
+          movieId={id}
+          isSelectedPage={true}
+        />
       ) : (
-        <p>No films selected.</p>
+        <div className="no-films-message">
+          <h2 className="no-films-message-title">No films selected :-)</h2>
+          <span>🎥</span>
+        </div>
       )}
     </>
   );

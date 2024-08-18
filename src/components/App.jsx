@@ -49,17 +49,18 @@ export const App = () => {
     localStorage.setItem(LOCAL_ST_KEY, JSON.stringify(selectedFilms));
   }, [selectedFilms]);
 
+  //& Не виконується, бо delete id не змінюється
   useEffect(() => {
-    console.log("have to delete: ", Number(deleteId));
-    console.log("selectedFilms: ", selectedFilms);
+    if (deleteId === null) return;
+
+    // console.log("have to delete: ", Number(deleteId));
     const filteredFilms = selectedFilms.filter(
       ({ id }) => id !== Number(deleteId)
     );
     setSelectedFilms([...filteredFilms]);
-
-    // console.log("filtrederFilms ", filteredFilms);
+    setDeleteId(null); // Коли клікне 2+ рази по тому ж фільму (додати-прибрати), useEffect не зпрацює, бо movieId, не змінююється, тому ось так ставлю null
     return () => {};
-  }, [deleteId]);
+  }, [deleteId, selectedFilms]);
 
   return (
     <>

@@ -1,3 +1,65 @@
 .active-link {
   border-color: transparent;
 }
+
+.no-films-message {
+  text-align: center;
+  font-size: clamp(1.5rem, 5vw, 2.5rem); /* Matches movie-title */
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 2px dashed #ff5722;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 1.5s infinite;
+  margin-top: 20px;
+  max-width: 600px; /* Matches the max-width of actor-info */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no-films-message h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.no-films-message span {
+  font-size: 2rem;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Bouncing Animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .no-films-message {
+    max-width: 100%;
+    font-size: 1.5rem; /* Adjusts to smaller screens */
+  }
+
+  .no-films-message span {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .no-films-message {
+    font-size: 1.3rem;
+  }
+
+  .no-films-message span {
+    font-size: 1.5rem;
+  }
+}

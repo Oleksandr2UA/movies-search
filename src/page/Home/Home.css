@@ -1,22 +1,3 @@
-/* .home__wrapper {
-  width: 500px;
-} */
-/* .home__title {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 0px;
-} */
-/* h1 {
-  text-align: center;
-  font-size: 3rem;
-  animation: fadeInDown 1s ease-in-out;
-} */
-/* ul li {
-  opacity: 0;
-  transform: translateX(-20px);
-  animation: slideIn 0.5s forwards ease-in-out;
-} */
-
 ul li:nth-child(odd) {
   animation-delay: 0.1s;
 }
@@ -25,47 +6,35 @@ ul li:nth-child(even) {
   animation-delay: 0.2s;
 }
 
-/* Base Wrapper Styling */
 .home__wrapper {
-  width: 100%; /* Full width on small screens */
-  max-width: 500px; /* Restrict maximum width */
-  margin: 0 auto; /* Center the content */
-  padding: 0 15px; /* Add padding for better spacing on small screens */
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-/* Title Styling */
 .home__title {
-  font-size: 1.5rem; /* Slightly smaller font size on mobile */
+  font-size: 1.5rem;
   text-align: center;
-  margin-bottom: 10px; /* Add margin for spacing */
+  margin-bottom: 10px;
 }
 
-/* Media Query for Screens Smaller than 768px */
 @media (max-width: 768px) {
   .home__wrapper {
-    width: 90%; /* Make the wrapper almost full width on smaller screens */
-  }
-
-  h1 {
-    font-size: 2rem; /* Further reduce title size on smaller screens */
-  }
-
-  .home__title {
-    font-size: 1.25rem; /* Smaller sub-title on smaller screens */
+    width: 90%;
   }
 }
 
-/* Media Query for Screens Smaller than 480px */
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.75rem; /* Reduce font size further for very small screens */
+    font-size: 1.75rem;
   }
 
   .home__title {
-    font-size: 1rem; /* Adjust subtitle size for small screens */
+    font-size: 1rem;
   }
 
   ul li {
-    font-size: 1rem; /* Adjust list item font size */
+    font-size: 1rem;
   }
 }

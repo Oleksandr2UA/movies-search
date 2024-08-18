@@ -4,7 +4,7 @@ import { getGenres } from "../helpers/GenresData/getGenres";
 import { sortFilms } from "../helpers/SortFilms";
 import "./MoviePreview.css";
 
-export const MoviePreview = ({ films, character, movieId }) => {
+export const MoviePreview = ({ films, character, movieId, isSelectedPage }) => {
   const sortedFilms = sortFilms(films);
   // console.log(sortedFilms);
   console.log("films: in preview ", films);
@@ -31,7 +31,7 @@ export const MoviePreview = ({ films, character, movieId }) => {
             console.log("genre_ids", genre_ids);
             console.log("genres", genres);
             // Get a string of genres
-            //? Check for selected films, as it has now genres=[{id,name}] not genres_ids=[1,2]
+            //? Check for SELECTED films, as it has now genres=[{id,name}] not genres_ids=[1,2]
             const genresArr = genre_ids
               ? getGenres(genre_ids)
               : getGenres(genres.map((genre) => genre.id));
@@ -40,7 +40,7 @@ export const MoviePreview = ({ films, character, movieId }) => {
                 to={path}
                 state={{ from: location }}
                 className={
-                  movieId && id === Number(movieId)
+                  !isSelectedPage && movieId && id === Number(movieId)
                     ? "actor-details-link active-link"
                     : "actor-details-link"
                 }

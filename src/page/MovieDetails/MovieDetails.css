@@ -1,38 +1,44 @@
+/* ! Movie details */
+
 .movie-details {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
-/* Bigger then 768px */
+
+/* Bigger than 768px */
 @media (min-width: 768px) {
   .movie-details {
     align-items: center;
   }
 }
-/* Smaller then 768px */
+
+/* Smaller than 768px */
 @media (max-width: 768px) {
   .movie-details {
     justify-content: center;
   }
 }
+
 .movie-subtitle {
   margin-top: 5px;
 }
 
-/* Smaller then 374px */
+/* Smaller than 374px */
 @media (max-width: 374px) {
   .movie-subtitle {
     margin-top: 10px;
   }
 }
-/* Smaller then 450 */
+
+/* Smaller than 450px */
 @media (max-width: 450px) {
   .movie-info .movie-stars {
-    margin-bottom: 0;
     margin-top: 0;
-    font-size: 25px;
   }
   .movie-info h1 {
+    margin-top: 0;
     margin-bottom: 10px;
   }
 }
@@ -44,17 +50,14 @@
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
-/* Smaller then 321 */
+
+/* Smaller than 321px */
 @media (max-width: 321px) {
   .movie-details img {
     min-width: 300px;
   }
 }
-@media (max-width: 450px) {
-  .movie-info h1 {
-    margin-top: 0;
-  }
-}
+
 .movie-info {
   max-width: 600px;
   flex: 1;
@@ -68,6 +71,7 @@
   margin-bottom: 0;
   font-size: 25px;
 }
+
 .movie-info p {
   font-size: 1.2rem;
   line-height: 1.5;
@@ -77,6 +81,7 @@
   font-size: 1.5rem;
   margin-top: 20px;
 }
+
 .movie-info .movie-genres {
   margin-bottom: 10px;
 }
@@ -100,7 +105,7 @@
   color: #ff5722;
 }
 
-/* FAvorite */
+/* Favorite */
 .favorite-icon {
   position: absolute;
   top: 20px;
@@ -113,12 +118,12 @@
   outline: none;
   padding: 0;
 }
-.favorite-icon:hover {
-  background-color: transparent;
-}
 
 .favorite-icon:focus {
   outline: none;
+}
+.favorite-icon:hover {
+  background-color: transparent;
 }
 
 .heart-icon {
@@ -129,26 +134,3 @@
 .heart-icon.active {
   color: red;
 }
-
-/* Movie Details Styling */
-.movie-details {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* Responsive Styles */
-@media (min-width: 768px) {
-  .movie-details {
-    align-items: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .movie-details {
-    justify-content: center;
-  }
-}
-
-/* Other existing styles */

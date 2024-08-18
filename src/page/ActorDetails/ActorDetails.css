@@ -16,7 +16,6 @@
   border-color: #ffc5b2;
 }
 
-/* Hover Effect */
 .actor-details-link:hover,
 .actor-details-link:focus {
   border-color: #bbb;
@@ -24,32 +23,25 @@
   transform: scale(1.03);
 }
 
-/* Image Styling */
 .actor-poster {
   width: 250px;
-  /* height: 200px; */
   object-fit: cover;
   margin-right: 20px;
   flex-shrink: 0;
 }
 
-/* Information Section Styling */
 .actor-info {
   max-width: 600px;
   flex-grow: 1;
-
   color: #000;
-  /* To avoid getting tomato color as a hover */
 }
 
-/* Title Styling */
 .movie-title {
-  font-size: 1.5em;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
   margin-bottom: 10px;
   position: relative;
 }
 
-/* Underline on Hover for Title */
 .movie-title::after {
   content: "";
   display: block;
@@ -66,34 +58,28 @@
   width: 100%;
 }
 
-/* Character Name Styling */
 .character-name {
   font-size: 1.2em;
-  /* margin-bottom: 8px; */
   margin-bottom: 18px;
 }
 
-/* Rating, Release Date, and Overview Styling */
 .release-date,
 .overview {
   margin-bottom: 5px;
   font-size: 1em;
 }
 
-/* Styles for the "People watched" span */
 .actor-watched {
   position: absolute;
   top: 10px;
   right: 10px;
   background-color: rgba(0, 0, 0, 0.7);
-  color: #fff; /* White text color */
+  color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.9em;
   z-index: 10;
 }
-
-/* Responsive Styles */
 
 /* For screens smaller than 768px */
 @media (max-width: 768px) {
@@ -105,8 +91,7 @@
 
   .actor-poster {
     margin-right: 0;
-    /* margin-bottom: 20px; */
-    width: 50%; /* Or 50% from container space, not sure what is better */
+    width: 50%;
     height: auto;
   }
 
@@ -117,14 +102,13 @@
     align-items: center;
   }
 
-  .actor-info span {
-    top: 15px;
-    right: 15px;
-    font-size: 0.8em;
+  .go-back-link,
+  .sidebar-link {
+    font-size: 1.1rem;
+    padding: 10px 15px;
   }
 }
 
-/* For screens smaller than 480px */
 @media (max-width: 480px) {
   .movie-title {
     font-size: 1.3em;
@@ -134,54 +118,43 @@
     font-size: 1.1em;
   }
 
-  .rating,
-  .release-date,
-  .overview {
-    font-size: 0.9em;
-  }
-
   .actor-poster {
-    width: 80%;
-    height: auto;
+    width: 100%;
+    /* better 100% if not 80% */
     margin-bottom: 10px;
   }
+}
 
-  .actor-info span {
-    top: 20px;
-    right: 20px;
-    font-size: 0.7em;
-  }
-  .actor-info .genre-name {
-    margin-right: 0px;
-  }
-  .genres-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
+.actor-details-title-name {
+  text-align: center;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  margin-bottom: 20px;
 }
 
 .rating {
   display: flex;
   font-size: 1.2em;
 }
+
 .star {
   color: #ffd700;
   margin-right: 5px;
 }
 
-/* Go Back / Cast / Reviews links Styles */
 .go-back-link {
   display: inline-block;
   font-size: 1rem;
   color: #3f51b5;
   text-decoration: none;
-  margin-bottom: 20px;
-  padding: 5px 10px;
+  margin-bottom: 1.25rem;
+  padding: 0.625rem 1.25rem;
   border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.go-back-link:hover {
+  color: #ff5722;
+  text-decoration: underline;
 }
 
 .sidebar-link {
@@ -193,34 +166,10 @@
   padding: 10px 15px;
   border-radius: 5px;
   background-color: #f5f5f5;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .sidebar-link:hover {
   color: #ff5722;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transform: scale(1);
-}
-.go-back-link:hover {
-  color: #ff5722;
-  text-decoration: underline;
-}
-
-/* Adjustments for Mobile */
-@media (max-width: 768px) {
-  .go-back-link {
-    font-size: 1.1rem;
-    padding: 10px 15px;
-  }
-
-  .sidebar-link {
-    font-size: 1.3rem;
-    padding: 15px 20px;
-  }
-}
-
-.actor-details-title-name {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
 }

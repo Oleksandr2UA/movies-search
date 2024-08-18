@@ -39,10 +39,11 @@ const MovieDetails = ({ onSetSelected, onDeleteId, selectedFilms }) => {
   function checkIfIsFavorite(selectedFilms, idMovie) {
     console.log("sel: ", selectedFilms);
     const resp = selectedFilms.find(({ id }) => id === Number(idMovie));
-    console.log("resp: ", resp);
     if (resp) {
       setIsFavorite(true);
+      return;
     }
+    setIsFavorite(false); // Without return above and false, when i open similar film, my page JUST RE-renders, and favorite is being left as checked, it is wrong so if ID is not in the list, i put false to checked
   }
   useEffect(() => {
     const abortController = new AbortController();
@@ -71,7 +72,7 @@ const MovieDetails = ({ onSetSelected, onDeleteId, selectedFilms }) => {
     return () => {
       abortController.abort();
     };
-  }, [movieId]);
+  }, [movieId, selectedFilms]);
 
   const toggleFavorite = () => {
     setIsFavorite((prevFav) => !prevFav);
@@ -80,10 +81,12 @@ const MovieDetails = ({ onSetSelected, onDeleteId, selectedFilms }) => {
     // Якщо змінюю на isFav true -> в console.log маю false
     // Якщо змінюю на isFav false -> в console.log маю true
     if (isFavorite === true) {
+      console.log("it works properly, the problem is in onDeleteId in app");
       onDeleteId(movieId);
       return;
     }
     onSetSelected(movieId);
+    console.log("adding movie");
   };
 
   return (
@@ -105,7 +108,7 @@ const MovieDetails = ({ onSetSelected, onDeleteId, selectedFilms }) => {
           <h2 className="error">{error}</h2>
         </>
       )}
-      {isLoading && <Loader />}
+      {isLoading && !error && <Loader />}
       {Object.keys(info).length !== 0 && (
         <div className="movie-details">
           <img
@@ -141,7 +144,7 @@ const MovieDetails = ({ onSetSelected, onDeleteId, selectedFilms }) => {
           </div>
         </div>
       )}
-      {!isLoading && Object.keys(info).length === 0 && <Loader />}
+      {!isLoading && Object.keys(info).length === 0 && !error && <Loader />}
       {trailer && isOpenModal && (
         <Modal closeModal={onCloseModal} src={trailer} />
       )}
